@@ -13,5 +13,18 @@ def encode(password):
 
     return encoded_password
 
+def decode(encoded_password):
+	decoded_password = ""
+	split_enc_pass = list(encoded_password)
+	for char in range(len(split_enc_pass)):
+		split_enc_pass[char] = int(split_enc_pass[char])
+		split_enc_pass[char] -= 3 #decoding my subtracting 3
+		if split_enc_pass[char] < 0: #making sure it doesnt produce a negative number
+			split_enc_pass[char] += 10
+		split_enc_pass[char] = str(split_enc_pass[char])
+		decoded_password += split_enc_pass[char]
+
+	return decoded_password
+
 if __name__ == '__main__':
     pass
