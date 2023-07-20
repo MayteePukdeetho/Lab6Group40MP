@@ -27,4 +27,24 @@ def decode(encoded_password):
 	return decoded_password
 
 if __name__ == '__main__':
-    pass
+    while True:
+        print('''Menu
+-------------
+1. Encode
+2. Decode
+3. Quit''')
+        menu_select = int(input("Choose an option: "))
+        if menu_select == 3:
+            break
+        elif menu_select == 1:
+            password = (input("Please enter your password to encode: "))
+            current_password = encode(password)
+            encoded_password = current_password
+            print('Your password has been encoded and stored!')
+        elif menu_select == 2:
+            current_password = decode(current_password)
+
+            print(f'The encoded password is {encoded_password}, and the original password is {current_password}.')
+
+        else:
+            pass
